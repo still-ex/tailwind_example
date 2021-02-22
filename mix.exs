@@ -15,7 +15,8 @@ defmodule StillTailwind.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger],
+      mod: {StillTailwind.Application, []}
     ]
   end
 
@@ -28,7 +29,8 @@ defmodule StillTailwind.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:still, "~> 0.2.0"}
+      {:still, github: "still-ex/still", ref: "master", override: true},
+      {:nodejs, "~> 2.0"}
     ]
   end
 end
